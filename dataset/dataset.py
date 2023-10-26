@@ -101,7 +101,7 @@ class Crowd2(Dataset):
         new_h = math.ceil(h / 16) * 16
         img = im.resize((new_w, new_h), Image.BICUBIC)
         name = os.path.basename(im_path).split(".png")[0]
-        return self.transform(img) name
+        return self.transform(img), name
 
     def train_transform(self, img, density_map):
         w, h = img.size
